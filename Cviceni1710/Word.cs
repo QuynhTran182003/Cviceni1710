@@ -8,23 +8,22 @@ namespace Cviceni1710
 {
     class Word
     {
-        private string englishWord;
+        private List<string> englishWord;
         private List<string> czechTranslate;
 
         public Word() 
         {
-            this.EnglishWord = "";
+            this.englishWord = new List<string>();
             this.czechTranslate = new List<string>();
         }
-        public Word(string eWord, List<string> czechWord)
+        public Word(List<string> eWord, List<string> czechWord)
         {
-            this.EnglishWord = eWord;
+            this.englishWord = eWord;
             this.czechTranslate = czechWord;
         }
 
-        public string EnglishWord { 
+        public List<string> EnglishWord { 
             get { return englishWord; }
-            set { englishWord = value; }
         }
 
         public List<string> CzechTranslate { get { return czechTranslate; } }
@@ -38,9 +37,6 @@ namespace Cviceni1710
             }
             return st;
         }
-        public override string? ToString()
-        {
-            return this.englishWord + ":\n" + this.DisplayCzechTranslateList();
-        }
+        
     }
 }
